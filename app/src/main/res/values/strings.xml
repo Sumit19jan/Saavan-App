@@ -1,3 +1,23 @@
 <resources>
     <string name="app_name">JioSaavn</string>
+    <string name="create_and_account">Create and Account</string>
+    <string name="sign_up_login" translatable="false">Sign up or Log in</string>
+    <string name="or_use">Or, use</string>
+    <string name="email_id">email Id</string>
+    <string name="phone_number">phone number</string>
+    <string name="or">or</string>
+    <string name="facebook">Facebook.</string>
+    <string name="what_language_do_you_listen_to">What language do you listen to ?</string>
+    <string name="other_languages">Other Languages</string>
+    <string name="haryanvi">Haryanvi</string>
+    <string name="gujarati">Gujarati</string>
+    <string name="marathi">Marathi</string>
+    <string name="rajasthani">Rajasthani</string>
+    <string name="urdu">Urdu</string>
+    <string name="bhojpuri">Bhojpuri</string>
+    <string name="kannada">Kannada</string>
+    <string name="malayam">Malayalam</string>
+    <string name="odia">Odia</string>
+    <string name="done">Done</string>
+    <string name="find_your_mood">Find Your Mood</string>
 </resources>

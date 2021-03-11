@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "290789456596",
+    "project_id": "jiosaavn-242fe",
+    "storage_bucket": "jiosaavn-242fe.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:290789456596:android:10af30568457155f501941",
+        "android_client_info": {
+          "package_name": "com.example.jiosaavn"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "290789456596-g1if32m4jceb51859q02dlmeacbl59i5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBL2gUKKk3vWbSBkPdOH34RNXoiBvm_rv0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "290789456596-g1if32m4jceb51859q02dlmeacbl59i5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

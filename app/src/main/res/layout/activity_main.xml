@@ -1,18 +1,103 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:orientation="vertical"
+    android:background="@color/white"
+    tools:context=".Activity.MainActivity">
 
-    <TextView
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+    <ImageView
+        android:layout_width="143dp"
+        android:layout_height="54dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/dp_10"
+        android:src="@drawable/jio_savan_logo_bg" />
+     <TextView
+            style="@style/Textview"
+             android:layout_marginTop="@dimen/dp_10"
+            android:text="@string/what_language_do_you_listen_to"
+             android:textColor="@color/black"/>
+    <Button
+        android:background="@drawable/hindi"
+        style="@style/ImageViewSelectingImage"
+        />
+    <Button
+        android:background="@drawable/english"
+        style="@style/ImageViewSelectingImage"
+       />
+
+    <LinearLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:orientation="horizontal"
+        android:layout_height="wrap_content">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <ImageView
+            style="@style/BlockImages"
+            android:src="@drawable/punjab"/>
+        <ImageView
+            style="@style/BlockImages"
+            android:src="@drawable/punjab"/>
+        <ImageView
+            style="@style/BlockImages"
+            android:src="@drawable/punjab"/>
+    </LinearLayout>
+    <TextView
+        style="@style/Textview"
+        android:layout_marginTop="@dimen/dp_10"
+        android:text="@string/other_languages"
+        android:textColor="@color/black"/>
+    <Button
+        style="@style/ButtonMainActivity"
+        android:text="@string/marathi"/>
+    <Button
+        style="@style/ButtonMainActivity"
+        android:text="@string/gujarati"/>
+    <Button
+            style="@style/ButtonMainActivity"
+            android:text="@string/haryanvi" />
+    <Button
+        style="@style/ButtonMainActivity"
+        android:text="@string/rajasthani"/>
+    <Button
+        style="@style/ButtonMainActivity"
+        android:text="@string/urdu"/>
+    <Button
+        style="@style/ButtonMainActivity"
+        android:text="@string/bhojpuri"/>
+    <Button
+        style="@style/ButtonMainActivity"
+        android:text="@string/kannada"/>
+    <Button
+        style="@style/ButtonMainActivity"
+        android:text="@string/malayam"/>
+    <Button
+        style="@style/ButtonMainActivity"
+        android:text="@string/odia"/>
+    <Button
+        style="@style/ButtonMainActivity"
+        android:text="Assamese"/>
+    <Button
+       style="@style/ImageView"
+        android:layout_gravity="center"
+        android:text="@string/done"
+        android:layout_marginTop="@dimen/dp_10"
+        android:paddingStart="@dimen/dp_40"
+        android:paddingEnd="@dimen/dp_40"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:background="@drawable/backgorund_done"
+        />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnLogout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+</ScrollView>
