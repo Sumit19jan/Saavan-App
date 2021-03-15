@@ -176,28 +176,7 @@
             app:layout_constraintTop_toBottomOf="@id/tvTamilTopSongs" />
 
 
-        <TextView
-            android:id="@+id/tvSelectTopArtists"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/dp_20"
-            android:layout_marginLeft="@dimen/dp_20"
-            android:layout_marginTop="@dimen/dp_20"
-            android:text="@string/choose_your_artist"
-            android:textColor="@color/black"
-            android:textSize="@dimen/sp_18"
-            android:textStyle="bold"
-            app:layout_constraintTop_toBottomOf="@id/topTamilRecyclerView" />
 
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/artistsRecyclerView"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/dp_180"
-            android:orientation="horizontal"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tvSelectTopArtists" />
 
         <TextView
             android:id="@+id/tvMalayalamSongs"
@@ -210,10 +189,10 @@
             android:textColor="@color/black"
             android:textSize="@dimen/sp_18"
             android:textStyle="bold"
-            app:layout_constraintTop_toBottomOf="@id/artistsRecyclerView" />
+            app:layout_constraintTop_toBottomOf="@+id/topTamilRecyclerView" />
 
 
-        <androidx.recyclerview.widget.RecyclerView
+            <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/malayalamRecyclerView"
             android:layout_width="match_parent"
             android:layout_height="@dimen/dp_180"

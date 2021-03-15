@@ -27,7 +27,7 @@ public class HomeFragment extends Fragment {
    private TextView tvMusicBackground;
    private TextView tvPodCastBackground;
    private Button btnGoPro;
-private FragmentLauncher fragmentLauncher;
+   private FragmentLauncher fragmentLauncher;
     @Override
     public void onAttach(@NonNull Context context) {
         super.onAttach(context);

@@ -25,7 +25,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class MainActivity extends AppCompatActivity implements FragmentLauncher {
+public class MainActivity extends AppCompatActivity implements FragmentLauncher{
 
     private BottomNavigationView bottomNavigationView;
     private FragmentManager fragmentManager;
@@ -100,29 +100,37 @@ public class MainActivity extends AppCompatActivity implements FragmentLauncher 
         podcastFragment.setArguments(bundle);
         fragmentTransaction.replace(R.id.flHomeContainer,podcastFragment,"PodCast Fragment").commit();
     }
+
+
     private void searchBar() {
-        final BottomSheetDialog bottomSheetDialog= new BottomSheetDialog(
-                MainActivity.this,R.style.BottomSheetDialogueTheme);
+        final BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(
+                MainActivity.this, R.style.BottomSheetDialogueTheme);
         View bottomSheetView = LayoutInflater.from(getApplicationContext()).inflate(
-                R.layout.bottom_search_bar,findViewById(R.id.bottomSearchContainer));
+                R.layout.bottom_search_bar, findViewById(R.id.bottomSearchContainer));
         bottomSheetDialog.setContentView(bottomSheetView);
         bottomSheetDialog.show();
-        ivSearch=bottomSheetView.findViewById(R.id.searchIcon);
-        etSearch=bottomSheetView.findViewById(R.id.etSearch);
+        ivSearch = bottomSheetView.findViewById(R.id.searchIcon);
+        etSearch = bottomSheetView.findViewById(R.id.etSearch);
 
-ivSearch.setOnClickListener(new View.OnClickListener() {
+        ivSearch.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, Search_activity.class);
+                intent.putExtra("SearchKey", etSearch.getText().toString());
+                startActivity(intent);
+                etSearch.setText("");
+
+            }
+        });
+    }
+
+
     @Override
-    public void onClick(View v) {
-        Intent intent= new Intent(MainActivity.this,Search_activity.class);
-         intent.putExtra("SearchKey",etSearch.getText().toString());
-         startActivity(intent);
-         etSearch.setText("");
+    public void launchMusicPlayer(Bundle bundle) {
+        FragmentTransaction fragmentTransaction= fragmentManager.beginTransaction();
+        MusicPlayer musicPlayer = new MusicPlayer();
+        musicPlayer.setArguments(bundle);
+        fragmentTransaction.replace(R.id.flContainer,musicPlayer,"Music Player").commit();
 
     }
-});
-
-
-
-
-
-}}
+}
