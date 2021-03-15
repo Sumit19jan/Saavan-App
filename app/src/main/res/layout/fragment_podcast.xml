@@ -5,31 +5,34 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    tools:context=".MusicFragment">
+    tools:context=".PodcastFragment">
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <ImageView
             android:id="@+id/ivAllCategoriesImage"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="@dimen/dp_120"
+            android:layout_height="@dimen/dp_150"
             android:src="@drawable/all"
+            android:scaleType="fitXY"
             app:layout_constraintEnd_toStartOf="@+id/ivJioSaavanSelectImageImage"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
         <ImageView
             android:id="@+id/ivJioSaavanSelectImageImage"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="@dimen/dp_120"
+            android:layout_height="@dimen/dp_150"
             android:src="@drawable/select"
+            android:scaleType="fitXY"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
         <ImageView
             android:id="@+id/ivTendingNowImage"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="@dimen/dp_120"
+            android:layout_height="@dimen/dp_150"
+            android:scaleType="fitXY"
             android:src="@drawable/trending_icon"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/ivJioSaavanSelectImageImage"
@@ -49,7 +52,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/ivAllCategoriesImage" />
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/topTeluguRecyclerView"
+            android:id="@+id/rvFeaturedPodcasts"
             android:layout_width="match_parent"
             android:layout_height="@dimen/dp_180"
             android:orientation="horizontal"
@@ -67,9 +70,9 @@
             android:textColor="@color/black"
             android:textSize="@dimen/sp_18"
             android:textStyle="bold"
-            app:layout_constraintTop_toBottomOf="@id/topTeluguRecyclerView" />
+            app:layout_constraintTop_toBottomOf="@id/rvFeaturedPodcasts" />
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/topEnglishRecyclerView"
+            android:id="@+id/rvWomenOfTheWorld"
             android:layout_width="match_parent"
             android:layout_height="@dimen/dp_180"
             android:orientation="horizontal"
@@ -88,35 +91,16 @@
             android:textColor="@color/black"
             android:textSize="@dimen/sp_18"
             android:textStyle="bold"
-            app:layout_constraintTop_toBottomOf="@id/topEnglishRecyclerView" />
+            app:layout_constraintTop_toBottomOf="@id/rvWomenOfTheWorld" />
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/trendingRecyclerView"
+            android:id="@+id/rvJioSaavnOriginals"
             android:layout_width="match_parent"
             android:layout_height="@dimen/dp_180"
             android:orientation="horizontal"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tvJioSaavnOriginals" />
-        <TextView
-            android:id="@+id/tvTrendingTopics"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/dp_20"
-            android:layout_marginLeft="@dimen/dp_20"
-            android:layout_marginTop="@dimen/dp_20"
-            android:text="Trending Topics"
-            android:textColor="@color/black"
-            android:textSize="@dimen/sp_18"
-            android:textStyle="bold"
-            app:layout_constraintTop_toBottomOf="@id/trendingRecyclerView" />
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/topHindiRecyclerView"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/dp_180"
-            android:orientation="horizontal"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tvTrendingTopics" />
+
         <TextView
             android:id="@+id/tvHotTopics"
             android:layout_width="match_parent"
@@ -128,17 +112,17 @@
             android:textColor="@color/black"
             android:textSize="@dimen/sp_18"
             android:textStyle="bold"
-            app:layout_constraintTop_toBottomOf="@id/topHindiRecyclerView" />
+            app:layout_constraintTop_toBottomOf="@id/rvJioSaavnOriginals" />
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/RadioStationRecyclerView"
+            android:id="@+id/rvHotTopics"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/dp_380"
+            android:layout_height="@dimen/dp_180"
             android:orientation="horizontal"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tvHotTopics" />
         <TextView
-            android:id="@+id/tvArroundTheWorldPodcasts"
+            android:id="@+id/tvMadeInIndia"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/dp_20"
@@ -148,14 +132,14 @@
             android:textColor="@color/black"
             android:textSize="@dimen/sp_18"
             android:textStyle="bold"
-            app:layout_constraintTop_toBottomOf="@id/RadioStationRecyclerView" />
+            app:layout_constraintTop_toBottomOf="@id/rvHotTopics" />
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/topTamilRecyclerView"
+            android:id="@+id/rvMadeInIndia"
             android:layout_width="match_parent"
             android:layout_height="@dimen/dp_180"
             android:orientation="horizontal"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tvArroundTheWorldPodcasts" />
+            app:layout_constraintTop_toBottomOf="@id/tvMadeInIndia" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

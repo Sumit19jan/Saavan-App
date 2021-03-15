@@ -18,6 +18,7 @@ import com.example.saavn_app_praneeth.Adapters.EnglishAdapter;
 import com.example.saavn_app_praneeth.Adapters.HindiAdapter;
 import com.example.saavn_app_praneeth.Adapters.MalayalamAdapter;
 import com.example.saavn_app_praneeth.Adapters.NewReleasesAdapter;
+import com.example.saavn_app_praneeth.Adapters.RadioStationAdapter;
 import com.example.saavn_app_praneeth.Adapters.TamilAdapter;
 import com.example.saavn_app_praneeth.Adapters.TeluguAdapter;
 import com.example.saavn_app_praneeth.Adapters.TrendingAdapter;
@@ -48,6 +49,9 @@ public class MusicFragment extends Fragment {
     private NewReleasesAdapter newReleasesAdapter;
     private TamilAdapter tamilAdapter;
     private MalayalamAdapter malayalamAdapter;
+    private RecyclerView RadioStationRecyclerView;
+    private RadioStationAdapter radioStationAdapter;
+    private final String Radio="Radio Stations";
     private final String English = "Pop songs";
     private final String Hindi = " BollyWood Music";
     private final String Tamil = "Tamil Music";
@@ -90,6 +94,7 @@ public class MusicFragment extends Fragment {
         TrendingRecyclerView = view.findViewById(R.id.trendingRecyclerView);
         TamilRecyclerView = view.findViewById(R.id.topTamilRecyclerView);
         NewReleasesRecyclerView = view.findViewById(R.id.newReleasesRecyclerView);
+        RadioStationRecyclerView= view.findViewById(R.id.RadioStationRecyclerView);
         startTeluguSongs();
         StartEnglishSongs();
         startTrending();
@@ -97,8 +102,40 @@ public class MusicFragment extends Fragment {
         startTamilSongs();
         startMalayalamSongs();
         startNewReleases();
+startRadioStation();
 
 
+    }
+
+    private void startRadioStation() {
+        callMRadioApi();
+        setRadioAdapter();
+    }
+
+    private void setRadioAdapter() {
+        GridLayoutManager gridLayoutManager = new GridLayoutManager(getContext(), 2, RecyclerView.HORIZONTAL, false);
+        RadioStationRecyclerView.setLayoutManager(gridLayoutManager);
+        radioStationAdapter = new RadioStationAdapter(resultsItemList);
+        RadioStationRecyclerView.setAdapter(radioStationAdapter);
+
+    }
+
+    private void callMRadioApi() {
+        ApiService apiService=ApiNetwork.getRetrofitInstance().create(ApiService.class);
+        apiService.getSongs(Radio).enqueue(new Callback<ResponseModel>() {
+            @Override
+            public void onResponse(Call<ResponseModel> call, Response<ResponseModel> response) {
+                if (response.body() != null) {
+                    resultsItemList = response.body().getResults();
+                    radioStationAdapter.updateAdapter(resultsItemList);
+                }
+            }
+
+            @Override
+            public void onFailure(Call<ResponseModel> call, Throwable t) {
+
+            }
+        });
 
     }
 
